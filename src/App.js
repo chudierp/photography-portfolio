@@ -10,6 +10,9 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import Footer from './componenets/Footer';
+
+
 
 class App extends React.Component {
 
@@ -32,16 +35,22 @@ class App extends React.Component {
     return (
       <Router>
         <Container className='p-0' fluid={true}>
+          
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand className='display-1 font-weight-bolder'>CHUDIER</Navbar.Brand>
+            
             <Navbar.Toggle aria-controls='navbar-toggle' />
             <Navbar.Collapse id='navbar-toggle'>
               <Nav className='ml-auto'>
-                <Link className='nav-link' to='/'>home</Link>
-                <Link className='nav-link' to='/contact'>contact</Link>
+                <Link className='nav-link' to='/'>HOME</Link>
+                <Link className='nav-link' to='/contact'>CONTACT</Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+
+          <Footer/>
+
+
         </Container>
       </Router>
     )
