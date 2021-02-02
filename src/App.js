@@ -11,6 +11,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 import Footer from './componenets/Footer';
+import HomePage from './pages/HomePage'
+import ContactPage from './pages/ContactPage';
 
 
 
@@ -25,6 +27,9 @@ class App extends React.Component {
           {title: 'contact', path:'/contact'},
       ],
       home: {
+
+      },
+      contact: {
 
       }  
     }
@@ -43,11 +48,13 @@ class App extends React.Component {
             <Navbar.Collapse id='navbar-toggle'>
               <Nav className='ml-auto'>
                 <Link className='nav-link' to='/'>HOME</Link>
-                <Link className='nav-link' to='/contact'>CONTACT</Link>
+                <Link className='nav-link' to='/contact'>CONTACT</Link>  
               </Nav>
             </Navbar.Collapse>
           </Navbar>
 
+          <Route path='/' exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
+          <Route path='/contact' render={() => <ContactPage title={this.state.contact.title} />} />
           <Footer/>
 
 
